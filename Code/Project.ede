@@ -16,5 +16,13 @@
     (ede-proj-target-makefile-program "ex_1_2"
       :name "ex_1_2"
       :path ""
-      :source '("ex_1_2.cpp")))
+      :source '("ex_1_2.cpp"))
+    (ede-proj-target-makefile-program "ex_1_3"
+      :name "ex_1_3"
+      :path ""
+      :source '("ex_1_3.cpp"))
+    (ede-proj-target-makefile-program "ex_1_4"
+      :name "ex_1_4"
+      :path ""
+      :source '("ex_1_4.cpp")))
   :makefile-type 'Makefile.am)

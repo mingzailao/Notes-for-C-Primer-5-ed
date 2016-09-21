@@ -74,7 +74,7 @@ namespace named std.
 #+BEGIN_SRC c++
 std::cin >> v1 >> v2;
 #+END_SRC
-The input operator (the » operator) behaves analogously to the output operator.
+The input operator (the $>>$ operator) behaves analogously to the output operator.
 It takes an istream as its left-hand operand and an object as its
 right-hand operand.
 It reads data from the given istream and stores what was read in the given object. 
@@ -109,5 +109,15 @@ int main()
 **** Exercise 1.4: Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication operator, *, to print the product instead.
 ***** Answer
 #+BEGIN_SRC c++
+#include<iostream>
+int main()
+{
+    std::cout<<"Enter two numbers : "<<std::endl;
+    int v1=0,v2=0;
+    std::cin>>v1>>v2;
+    std::cout<<"The product of "<<v1<<"and "<<v2
+        <<" is "<<v1*v2<<std::endl;
+    return 0;
+}
 
 #+END_SRC
