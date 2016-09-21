@@ -1,0 +1,44 @@
+#+TITLE:     C++ Primer Notes
+#+AUTHOR:    mingzailao
+#+EMAIL:     mingzailao@126.com
+#+DATE:      2016-9-11
+* Begin
+** Edit a simple C++ program
+*** Example 1_1_1
+#+BEGIN_SRC c++
+#include<iostream>
+using std::cout;
+using std::endl;
+int main()
+{
+    cout<<"Hello world"<<endl;
+    return 0;
+}
+#+END_SRC
+*** Complie and Run
+**** Compile
+#+BEGIN_SRC sh
+  #!/bin/bash
+  cd Code
+  g++ hello.cpp -o Hello
+#+END_SRC
+In the next, I just use Automake to compile.
+
+**** Run ./Hello
+
+*** Exercise
+**** Exercise ex_1_2
+
+** First step to Input and Output stream
+- a program using Standard IO (Input and Output) Libary
+#+BEGIN_SRC c++
+#include<iostream>
+int main()
+{
+    std::cout<<"Enter two numbers : "<<std::endl;
+    int v1=0,v2=0;
+    std::cin>>v1>>v2;
+    std::cout<<"The sum of "<<v1<<"and "<<v2<<" is "<<v1+v2<<std::endl;
+    return 0;
+}
+#+END_SRC 
