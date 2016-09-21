@@ -1,4 +1,4 @@
-% Created 2016-09-21 Wed 15:34
+% Created 2016-09-21 Wed 16:23
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -185,6 +185,63 @@ int main()
 }
 \end{verbatim}
 \end{enumerate}
+\item Exercise 1.5: We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.
+\label{sec-1-2-7-3}
+\begin{enumerate}
+\item Answer
+\label{sec-1-2-7-3-1}
+\begin{verbatim}
+#include<iostream>
+int main()
+{
+    std::cout<<"Enter two numbers : "<<std::endl;
+    int v1=0,v2=0;
+    std::cin>>v1>>v2;
+    std::cout<<"The sum of "<<std::endl;
+    std::cout<<v1<<std::endl;
+    std::cout<<"and "<<std::endl;
+    std::cout<<v2<<std::endl;
+    std::cout<<"is "<<std::endl;
+    std::cout<<v1+v2<<std::endl;
+    return 0;
+}
+\end{verbatim}
+\end{enumerate}
+\end{enumerate}
+\subsection{A Word about Comments}
+\label{sec-1-3}
+\subsubsection{Kinds of Comments in C++}
+\label{sec-1-3-1}
+\begin{enumerate}
+\item //
+\item \emph{*    *}
+\end{enumerate}
+\subsection{Flow of Control}
+\label{sec-1-4}
+\subsubsection{The while Statement}
+\label{sec-1-4-1}
+\begin{enumerate}
+\item Example
+\label{sec-1-4-1-1}
+\begin{verbatim}
+#include <iostream>
+int main()
+{
+    int sum=0,val =1;
+    while(val<=10){
+        sum+=val;
+        ++val;
+    }
+    std::cout<<"Sum of 1 to 10 is : "<<sum<<std::endl;
+    return 0;
+}
+\end{verbatim}
+\item Notes
+\label{sec-1-4-1-2}
+\begin{verbatim}
+val+=1
+\end{verbatim}
+val+=1 $\Leftrightarrow$  val=val+1
 \end{enumerate}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

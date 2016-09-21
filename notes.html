@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>C++ Primer Notes</title>
-<!-- 2016-09-21 Wed 14:18 -->
+<!-- 2016-09-21 Wed 16:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="mingzailao" />
@@ -186,14 +186,29 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1">1. Begin</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Edit a simple C++ program</a>
+<li><a href="#sec-1-1">1.1. Writing a Simple C++ Program</a>
 <ul>
 <li><a href="#sec-1-1-1">1.1.1. Example \(1\_1\_1\)</a></li>
-<li><a href="#sec-1-1-2">1.1.2. Complie and Run</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Compiling and Executing Our Program</a></li>
 <li><a href="#sec-1-1-3">1.1.3. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2. First step to Input and Output stream</a></li>
+<li><a href="#sec-1-2">1.2. A First Look at Input/Output</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. Standard Input and Output Objects</a></li>
+<li><a href="#sec-1-2-2">1.2.2. A Program That Uses the IO Library</a></li>
+<li><a href="#sec-1-2-3">1.2.3. Writing to a Stream</a></li>
+<li><a href="#sec-1-2-4">1.2.4. Using Names from the Standard Library</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Reading from a Stream</a></li>
+<li><a href="#sec-1-2-6">1.2.6. Completing the Program</a></li>
+<li><a href="#sec-1-2-7">1.2.7. EXercise</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. A Word about Comments</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -203,7 +218,7 @@ for the JavaScript code in this tag.
 <h2 id="sec-1"><span class="section-number-2">1</span> Begin</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Edit a simple C++ program</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Writing a Simple C++ Program</h3>
 <div class="outline-text-3" id="text-1-1">
 </div><div id="outline-container-sec-1-1-1" class="outline-4">
 <h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Example \(1\_1\_1\)</h4>
@@ -223,9 +238,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Complie and Run</h4>
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Compiling and Executing Our Program</h4>
 <div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>Compile<br  /><div class="outline-text-5" id="text-1-1-2-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>Comliling<br  /><div class="outline-text-5" id="text-1-1-2-1">
 <div class="org-src-container">
 
 <pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
@@ -239,13 +254,17 @@ In the next, I just use Automake to compile.
 </div>
 </li>
 
-<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>Run ./Hello<br  /></li></ol>
+<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>Executing<br  /><div class="outline-text-5" id="text-1-1-2-2">
+<p>
+./Hello
+</p>
 </div>
-
+</li></ol>
+</div>
 <div id="outline-container-sec-1-1-3" class="outline-4">
 <h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-1-3">
-</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>Exercise \(ex\_1\_2\)<br  /><div class="outline-text-5" id="text-1-1-3-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>Exercise 1.2: Change the program to return -1. A return value of -1 is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from main.<br  /><ol class="org-ol"><li><a id="sec-1-1-3-1-1" name="sec-1-1-3-1-1"></a>Answer<br  /><div class="outline-text-6" id="text-1-1-3-1-1">
 <div class="org-src-container">
 
 <pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
@@ -258,15 +277,33 @@ In the next, I just use Automake to compile.
 </div>
 </div>
 </li></ol>
+</li></ol>
 </div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> First step to Input and Output stream</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> A First Look at Input/Output</h3>
 <div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>a program using Standard IO (Input and Output) Libary
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Standard Input and Output Objects</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+The library defines four IO objects:
+</p>
+<ol class="org-ol">
+<li>istream:cin
 </li>
-</ul>
+<li>ostream:cout
+</li>
+<li>cerr
+</li>
+<li>clog
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> A Program That Uses the IO Library</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <div class="org-src-container">
 
 <pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
@@ -275,11 +312,153 @@ In the next, I just use Automake to compile.
     <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"Enter two numbers : "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
     <span style="color: #228b22;">int</span> <span style="color: #a0522d;">v1</span>=0,<span style="color: #a0522d;">v2</span>=0;
     <span style="color: #008b8b;">std</span>::cin&gt;&gt;v1&gt;&gt;v2;
-    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"The sum of "</span>&lt;&lt;v1&lt;&lt;<span style="color: #8b2252;">"and "</span>&lt;&lt;v2&lt;&lt;<span style="color: #8b2252;">" is "</span>&lt;&lt;v1+v2&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"The sum of "</span>&lt;&lt;v1&lt;&lt;<span style="color: #8b2252;">"and "</span>&lt;&lt;v2
+        &lt;&lt;<span style="color: #8b2252;">" is "</span>&lt;&lt;v1+v2&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
     <span style="color: #a020f0;">return</span> 0;
 }
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Writing to a Stream</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"Enter two number"</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+</pre>
+</div>
+<p>
+The \(<<\) operator takes two operands:
+The left-hand operand must be an ostream object(std::cout); 
+the right-hand operand is a value to print.
+The operator writes the given value on the given ostream
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-2-3-1" name="sec-1-2-3-1"></a>Notes for std::endl<br  /><div class="outline-text-5" id="text-1-2-3-1">
+<p>
+Writing endl has the effect of ending the current line and flushing the buffer.
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Using Names from the Standard Library</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+The prefix std:: indicates that the names cout and endl are defined inside the
+namespace named std.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Reading from a Stream</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #008b8b;">std</span>::cin &gt;&gt; v1 &gt;&gt; v2;
+</pre>
+</div>
+<p>
+The input operator (the \(>>\) operator) behaves analogously to the output operator.
+It takes an istream as its left-hand operand and an object as its
+right-hand operand.
+It reads data from the given istream and stores what was read in the given object. 
+The input operator returns its left-hand operand as its result.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-2-5-1" name="sec-1-2-5-1"></a>Notes<br  /><div class="outline-text-5" id="text-1-2-5-1">
+<p>
+All the operators just like a function which can return its left-hand operand or its 
+right-hand operand.
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Completing the Program</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span style="color: #8b2252;">" and "</span> &lt;&lt; v2 
+&lt;&lt; <span style="color: #8b2252;">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+</pre>
+</div>
+<p>
+It prints each of its operands on the standard output.
+What is interesting in this example is that the operands are not all the same kinds of values. 
+Some operands are string literals, such as "The sum of ". 
+Others are int values, such as v1, v2, 
+and the result of evaluating the arithmetic expression v1 + v2. 
+The library defines versions of the input and output 
+operators that handle operands of each of these differing types.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7"><span class="section-number-4">1.2.7</span> EXercise</h4>
+<div class="outline-text-4" id="text-1-2-7">
+</div><ol class="org-ol"><li><a id="sec-1-2-7-1" name="sec-1-2-7-1"></a>Exercise 1.3: Write a program to print Hello, World on the standard output.<br  /><ol class="org-ol"><li><a id="sec-1-2-7-1-1" name="sec-1-2-7-1-1"></a>Answer<br  /><div class="outline-text-6" id="text-1-2-7-1-1">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
+{
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"Hello world"</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-2-7-2" name="sec-1-2-7-2"></a>Exercise 1.4: Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication operator, *, to print the product instead.<br  /><ol class="org-ol"><li><a id="sec-1-2-7-2-1" name="sec-1-2-7-2-1"></a>Answer<br  /><div class="outline-text-6" id="text-1-2-7-2-1">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
+{
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"Enter two numbers : "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">v1</span>=0,<span style="color: #a0522d;">v2</span>=0;
+    <span style="color: #008b8b;">std</span>::cin&gt;&gt;v1&gt;&gt;v2;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"The product of "</span>&lt;&lt;v1&lt;&lt;<span style="color: #8b2252;">"and "</span>&lt;&lt;v2
+        &lt;&lt;<span style="color: #8b2252;">" is "</span>&lt;&lt;v1*v2&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-2-7-3" name="sec-1-2-7-3"></a>Exercise 1.5: We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.<br  /><ol class="org-ol"><li><a id="sec-1-2-7-3-1" name="sec-1-2-7-3-1"></a>Answer<br  /><div class="outline-text-6" id="text-1-2-7-3-1">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
+{
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"Enter two numbers : "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">v1</span>=0,<span style="color: #a0522d;">v2</span>=0;
+    <span style="color: #008b8b;">std</span>::cin&gt;&gt;v1&gt;&gt;v2;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"The sum of "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;v1&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"and "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;v2&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;<span style="color: #8b2252;">"is "</span>&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #008b8b;">std</span>::cout&lt;&lt;v1+v2&lt;&lt;<span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</li></ol>
+</li></ol>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> A Word about Comments</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> </h4>
 </div>
 </div>
 </div>
@@ -287,7 +466,7 @@ In the next, I just use Automake to compile.
 <div id="postamble" class="status">
 <p class="date">Date: 2016-9-11</p>
 <p class="author">Author: mingzailao</p>
-<p class="date">Created: 2016-09-21 Wed 14:18</p>
+<p class="date">Created: 2016-09-21 Wed 16:14</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

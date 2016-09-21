@@ -4,7 +4,7 @@
 #+DATE:      2016-9-11
 * Begin
 ** Writing a Simple C++ Program
-*** Example $1\_1\_1$
+*** Example 1.1
 #+BEGIN_SRC c++
 #include<iostream>
 using std::cout;
@@ -119,5 +119,56 @@ int main()
         <<" is "<<v1*v2<<std::endl;
     return 0;
 }
+
+#+END_SRC
+**** Exercise 1.5: We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.
+***** Answer
+#+BEGIN_SRC c++
+#include<iostream>
+int main()
+{
+    std::cout<<"Enter two numbers : "<<std::endl;
+    int v1=0,v2=0;
+    std::cin>>v1>>v2;
+    std::cout<<"The sum of "<<std::endl;
+    std::cout<<v1<<std::endl;
+    std::cout<<"and "<<std::endl;
+    std::cout<<v2<<std::endl;
+    std::cout<<"is "<<std::endl;
+    std::cout<<v1+v2<<std::endl;
+    return 0;
+}
+
+#+END_SRC
+** A Word about Comments
+*** Kinds of Comments in C++
+1. //
+2. /*    */
+** Flow of Control
+*** The while Statement
+**** Example
+#+BEGIN_SRC c++
+#include <iostream>
+int main()
+{
+    int sum=0,val =1;
+    while(val<=10){
+        sum+=val;
+        ++val;
+    }
+    std::cout<<"Sum of 1 to 10 is : "<<sum<<std::endl;
+    return 0;
+}
+#+END_SRC
+**** Notes
+#+BEGIN_SRC c++
+val+=1
+#+END_SRC
+val+=1 \Leftrightarrow  val=val+1
+++val  \Leftrightarrow  val=val+1 and the value of ++val is val(after)
+val++  \Leftrightarrow  val=val+1 and the value of val++ is val(before)
+*** Exercise
+**** Exercise 1.9: Write a program that uses a while to sum the numbers from 50 to 100.
+#+BEGIN_SRC c++
 
 #+END_SRC
