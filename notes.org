@@ -3,8 +3,8 @@
 #+EMAIL:     mingzailao@126.com
 #+DATE:      2016-9-11
 * Begin
-** Edit a simple C++ program
-*** Example 1_1_1
+** Writing a Simple C++ Program
+*** Example $1\_1\_1$
 #+BEGIN_SRC c++
 #include<iostream>
 using std::cout;
@@ -15,8 +15,8 @@ int main()
     return 0;
 }
 #+END_SRC
-*** Complie and Run
-**** Compile
+*** Compiling and Executing Our Program
+**** Comliling
 #+BEGIN_SRC sh
   #!/bin/bash
   cd Code
@@ -24,13 +24,30 @@ int main()
 #+END_SRC
 In the next, I just use Automake to compile.
 
-**** Run ./Hello
-
+**** Executing 
+./Hello
 *** Exercise
-**** Exercise ex_1_2
+**** Exercise 1.2
+Change the program to return -1. A return value of -1 is often treated as an indicator
+that the program failed. Recompile and rerun your program to see how your system treats
+a failure indicator from main.
+***** Answer
+#+BEGIN_SRC c++
+#include<iostream>
 
-** First step to Input and Output stream
-- a program using Standard IO (Input and Output) Libary
+int main()
+{
+    return -1;
+}
+#+END_SRC
+** A First Look at Input/Output
+*** Standard Input and Output Objects
+The library defines four IO objects:
+1. istream:cin
+2. ostream:cout
+3. cerr
+4. clog
+*** A Program That Uses the IO Library
 #+BEGIN_SRC c++
 #include<iostream>
 int main()
@@ -42,3 +59,9 @@ int main()
     return 0;
 }
 #+END_SRC 
+*** Writing to a Stream
+#+BEGIN_SRC c++
+std::cout<<"Enter two number"<<std::endl;
+#+END_SRC
+std::cout is a object in iostream(extends from isteam and ostream), specifically, in 
+libary ostream, the operator "<<" 

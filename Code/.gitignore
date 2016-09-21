@@ -48,5 +48,5 @@
 .deps/
 .dirstamp
 .libs/
-*.l[ao]
+b*.l[ao]
 *~
